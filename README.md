@@ -1,28 +1,45 @@
-# TASK 03: Professional Profile
+# Defensive Security Commissioning Portfolio (45-Day Program)
 
-**Name:** Mustafa Firojbhai Saherwala
-**Program Name:** Grey Sentinel 45 Days Program - Blue Team Defensive Security Operations Unit (DSOU)
-**Start Date:** July 2, 2026
+## 👨‍💻 About Me & Objective
+I am an IT professional with a strong foundation in technical troubleshooting, endpoint support, and banking operations. I am currently undertaking a rigorous 45-day defensive security commissioning program to bridge the gap between theoretical knowledge and hands-on operational capability. 
+
+This repository serves as my active portfolio and evidence locker. It documents the daily construction of my Blue Team lab environment and the automated tools, scripts, and log analysis techniques I am developing for Security Operations Center (SOC) workflows.
+
+## 📜 Certifications
+*   **CompTIA Security+** (Earned April 2026)
+*   **CompTIA Network+**  (Earned June 2026)
+*   **Google Cybersecurity Professional Certificate** (Earned March 2026)
+
+## 🛠️ Core Capabilities & Technology Stack
+*   **Environments:** Oracle VirtualBox, VMware, Kali Linux, Windows 11
+*   **Scripting & Automation:** Bash, PowerShell
+*   **Security Operations:** Log Analysis (SIEM fundamentals), File Integrity Monitoring (FIM), Access Control (IAM)
+*   **Endpoint Defense:** Process/Service investigation, Windows Event Viewer, `/var/log` interrogation
+
+--- 
+
+## 📅 Mission Log: 45-Day Tracker
+
+*Below is the chronological log of my operational tasks, scripts written, and environments deployed. Click into the daily folders above for detailed documentation, code, and visual proof of execution.*
+
+### ✅ Day 1 & Day 2: Blue Team Foundation Setup
+*   **Status:** Completed
+*   **Summary:** Provisioned a Windows 11 Blue Team Virtual Machine (4 GB RAM, 2 Cores) to serve as a secure baseline testing environment. Documented foundational research covering SOC structures, SIEM log correlation, and Red vs. Blue team objectives. Initialized this Git repository for version control.
+
+
+### ✅ Day 3: Operation Sentinel Gaze (Linux Intelligence)
+*   **Status:** Completed
+*   **Summary:** Deployed a Kali Linux VM for system intelligence gathering. Navigated the filesystem, executed local user/group administration, and established baseline hashes for File Integrity Monitoring (FIM). 
+*   **Scripting Highlight:** Engineered `log_analyzer.sh` (Bash) to automatically parse `/var/log/auth.log`, extract IP addresses exhibiting brute-force behavior, and export a summarized incident report.
+
+### ✅ Day 4: Operation Shadow Hunt (Windows Intelligence)
+*   **Status:** Completed
+*   **Summary:** Deployed a Windows 11 endpoint via VirtualBox to execute system reconnaissance and secure local administrator accounts. Mitigated attack surfaces by investigating and disabling unnecessary running services.
+*   **Scripting Highlight:** Engineered `event_collector.ps1` (PowerShell) to automatically interrogate the Windows Security log, extract Event IDs 4624 (Success) and 4625 (Failure), and output the forensic data to a structured CSV file for rapid analysis.
+
+### 🔄 Days 5 - 45: Active / In Progress
+*   *Further missions will be documented here as they are completed.*
 
 ---
-
-### 🛡️ Mission Objective
-To systematically develop and refine hands-on skills in threat detection, network security monitoring, and incident response. My objective over these 45 days is to build the practical, foundational capabilities required for a Tier 1 SOC Analyst role, ensuring I can effectively identify and mitigate active cyber threats.
-
-### 💻 Software Installed
-*The following core tools have been configured for my defensive environment:*
-* **Virtualization:** Oracle VirtualBox
-* **Windows 11** ISO Blue Team Lab
-* **Visual Studio Code** Documentation
-* **Documentation:** GitHub / Obsidian
-
-### 🖥️ Virtual Machine Details
-*My local cyber range includes the following virtualized environments:*
-* **Endpoint Target:** Windows 11 - *Allocated 4GB RAM, 2 Cores*
-* **Security Tooling:** Security Onion / Ubuntu Base - *Allocated 4GB RAM, 2 Cores*
-
-### 🎯 Learning Goals
-1. **Log Analysis & SIEM:** Gain practical proficiency in aggregating and analyzing event logs to identify malicious patterns.
-2. **Network Traffic Analysis (NTA):** Learn to confidently analyze PCAP files and spot network anomalies.
-3. **Incident Response (IR):** Understand the phases of IR and practice containing simulated threats.
-4. **Endpoint Security:** Master the basics of process monitoring and malware containment on Windows systems.
+---
+> *"Certifications built my theoretical foundation. Every completed mission in this repository serves as my practical proof of execution."*
