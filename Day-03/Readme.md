@@ -1,5 +1,7 @@
 # Day 3: Operation Sentinel Gaze (Linux Intelligence Gathering)
 
+> **Author:** Mustafa Firojbhai Saherwala
+
 ## 🎯 Mission Objective
 The primary objective of this mission was to become fluent in Linux security by navigating the filesystem, managing system processes, and identifying malicious activity through system logs. The operational focus was on gathering Linux intelligence and building automated scripts for SOC (Security Operations Center) analysis.
 
