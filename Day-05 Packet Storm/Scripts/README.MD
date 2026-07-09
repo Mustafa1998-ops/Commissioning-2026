@@ -24,4 +24,3 @@ I isolated the issue to virtual network configurations and host-based firewall r
 
 ## Key Artifacts
 *   **`network_mapper.sh`**: Automated network discovery Bash script.
-*   **`Day5_Submission_Report.docx`**: Comprehensive documentation of network topology, protocol characteristics, and service fingerprinting matrices.
