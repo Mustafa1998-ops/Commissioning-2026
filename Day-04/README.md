@@ -1,5 +1,7 @@
 # Day 4: Operation Shadow Hunt (Windows Intelligence Gathering)
 
+> **Author:** Mustafa Firojbhai Saherwala
+
 ## 🎯 Mission Objective
 The primary objective of this mission was to become fluent in the Windows command line and PowerShell to manage systems and identify security events. The operational focus was on deploying a secure Windows environment, managing local users, inspecting processes, and automating the collection and interpretation of Windows Event Logs for SOC analysis.
 
