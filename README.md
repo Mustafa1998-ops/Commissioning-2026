@@ -1,7 +1,7 @@
 # Defensive Security Commissioning Portfolio (45-Day Program)
 
 ## 👨‍💻 About Me & Objective
-I am an IT professional with a strong foundation in technical troubleshooting, endpoint support, and banking operations. I am currently undertaking a rigorous 45-day defensive security commissioning program to bridge the gap between theoretical knowledge and hands-on operational capability. Q
+I am an IT professional with a strong foundation in technical troubleshooting, endpoint support, and banking operations. I am currently undertaking a rigorous 45-day defensive security commissioning program to bridge the gap between theoretical knowledge and hands-on operational capability.
 
 This repository serves as my active portfolio and evidence locker. It documents the daily construction of my Blue Team lab environment and the automated tools, scripts, and log analysis techniques I am developing for Security Operations Center (SOC) workflows.
 
