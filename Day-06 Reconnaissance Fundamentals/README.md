@@ -42,6 +42,10 @@ Running: Microsoft Windows 10
 OS CPE: cpe:/o:microsoft:windows_10
 OS details: Microsoft Windows 10 1709 - 1909
 Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap done: 1 IP address (1 host up) scanned in 24.45 seconds
+```
 
 ### Task 6.3: Service Enumeration Report
 Interpreted the raw Nmap data to identify potential attack vectors and vulnerabilities based on the exposed services.
@@ -72,9 +76,12 @@ $ theHarvester -d [TARGET_DOMAIN].com -b google,linkedin
 [*] Hosts found:
     vpn.[TARGET_DOMAIN].com: [SANITIZED_IP]
     mail.[TARGET_DOMAIN].com: [SANITIZED_IP]
+```
 
 ### Task 6.5: Complete Reconnaissance Report
-Compiled all findings from the passive (WHOIS, DNS, `theHarvester`) and active (Nmap) phases into a structured professional report. The analysis concluded that the target environment possesses significant external footprint exposure alongside internal network attack surfaces primarily centered around Windows file sharing and remote management protocols.
+Compiled all findings from the passive (WHOIS, DNS, `theHarvester`) and active (Nmap) phases into a structured professional report. The analysis concluded that the target environment possesses significant external footprint exposure alongside internal network attack surfaces primarily centered around Windows file sharing and remote management protocols. 
+
+---
 
 ## 🚧 Challenges Faced & Overcome
 *   **VM Performance Bottlenecks:** Initially, the scanning tools and hypervisor were lagging due to disk I/O limitations. 
@@ -88,6 +95,3 @@ Compiled all findings from the passive (WHOIS, DNS, `theHarvester`) and active (
 *   **The Line Between Passive and Active:** Gained a practical understanding of how passive recon leaves zero footprint on the target's logs, whereas active scanning is highly noisy and requires careful execution to avoid immediate detection by a SOC.
 *   **Infrastructure is Foundational:** Security tools are only as good as the infrastructure they run on. Troubleshooting VM networking and storage performance is a critical skill for any security analyst.
 *   **Interpreting "Failure":** A failed ping or a dropped packet isn't an error; it's intelligence. It indicates how the target's firewall is configured, requiring the analyst to adapt their methodology.
-Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Nmap done: 1 IP address (1 host up) scanned in 24.45 seconds
