@@ -42,6 +42,7 @@ Running: Microsoft Windows 10
 OS CPE: cpe:/o:microsoft:windows_10
 OS details: Microsoft Windows 10 1709 - 1909
 Network Distance: 1 hop
+
 ### Task 6.3: Service Enumeration Report
 Interpreted the raw Nmap data to identify potential attack vectors and vulnerabilities based on the exposed services.
 
@@ -51,6 +52,7 @@ Interpreted the raw Nmap data to identify potential attack vectors and vulnerabi
 | **139 / TCP** | NetBIOS-SSN | Open | Used for file/printer sharing; can leak system information. |
 | **445 / TCP** | SMB | Open | Highly vulnerable if unpatched (e.g., EternalBlue). Key target for ransomware propagation. |
 | **3389 / TCP** | RDP (Terminal) | Open | Allows remote desktop access. Should be monitored for brute-force attempts or restricted via VPN. |
+
 ### Task 6.4: theHarvester Output
 Deployed `theHarvester` to scrape public sources (search engines, LinkedIn, Shodan) for exposed email addresses, subdomains, and employee names. 
 
@@ -70,8 +72,10 @@ $ theHarvester -d [TARGET_DOMAIN].com -b google,linkedin
 [*] Hosts found:
     vpn.[TARGET_DOMAIN].com: [SANITIZED_IP]
     mail.[TARGET_DOMAIN].com: [SANITIZED_IP]
+
 ### Task 6.5: Complete Reconnaissance Report
 Compiled all findings from the passive (WHOIS, DNS, `theHarvester`) and active (Nmap) phases into a structured professional report. The analysis concluded that the target environment possesses significant external footprint exposure alongside internal network attack surfaces primarily centered around Windows file sharing and remote management protocols.
+
 ## 🚧 Challenges Faced & Overcome
 *   **VM Performance Bottlenecks:** Initially, the scanning tools and hypervisor were lagging due to disk I/O limitations. 
     *   *Solution:* Migrated the Virtual Machines to a faster storage drive, optimizing lab performance and drastically reducing Nmap scan times.
