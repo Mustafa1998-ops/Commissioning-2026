@@ -1,5 +1,7 @@
 # Operation Packet Storm: Day 5 - Network Traffic Analysis & Automation
 
+> **Author:** Mustafa Firojbhai Saherwala
+
 ## Project Overview
 This project focuses on translating theoretical networking principles into practical, hands-on Security Operations Center (SOC) capabilities. The objective was to analyze raw network traffic to detect anomalies, understand protocol behaviors on the wire, and map internal network topologies using automated reconnaissance tools.
 
