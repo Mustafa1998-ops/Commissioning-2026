@@ -1,5 +1,7 @@
 # Blue Team Research Notes
 
+> **Author:** Mustafa Firojbhai Saherwala
+
 A collection of foundational concepts and tools essential for Blue Team operations and defensive cybersecurity.
 
 ## Table of Contents
