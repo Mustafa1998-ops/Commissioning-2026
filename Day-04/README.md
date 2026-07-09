@@ -32,4 +32,3 @@ The primary objective of this mission was to become fluent in the Windows comman
 
 ## 📂 Deliverables Included in This Folder
 *   `event_collector.ps1`: The automated PowerShell script created for extracting and exporting security events.
-*   `Screenshots/`: Visual evidence documenting the VirtualBox Windows 11 deployment, system reconnaissance, user creation, process management, event log analysis, and script execution.
