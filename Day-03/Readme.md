@@ -31,4 +31,3 @@ The primary objective of this mission was to become fluent in Linux security by 
 
 ## 📂 Deliverables Included in This Folder
 *   `log_analyzer.sh`: The automated Bash script created for log analysis.
-*   `Screenshots/`: Visual evidence of command executions, user creation, process investigation, and file integrity checks.
