@@ -1,5 +1,7 @@
 # Day 6: Passive Reconnaissance & Active Network Mapping 🔍
 
+> **Author:** Mustafa Firojbhai Saherwala
+
 ## 🔒 OPSEC Disclaimer
 > **Security Mindset Note:** In adherence to strict Operational Security (OPSEC) principles and best practices, raw screenshots containing actual target IPs, internal network configurations, and live enumeration data have been intentionally omitted from this public repository. All logs, IP addresses, and command outputs below have been sanitized (e.g., using `[TARGET_IP]` or `[DOMAIN]`) to prevent the exposure of sensitive infrastructure while still demonstrating technical methodology.
 
