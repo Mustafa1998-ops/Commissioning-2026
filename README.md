@@ -55,12 +55,10 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Summary:** Transitioned from offensive tool execution to defensive analysis by mapping attacker behavior to industry frameworks. Mapped Nmap active scanning techniques and the EternalBlue exploit to the MITRE ATT&CK framework and Lockheed Martin Cyber Kill Chain. Conducted a Detection Gap Analysis and generated a visual coverage heatmap to prioritize future SIEM rule development.
 
 *   ### ✅ Day 9: Defensive Operations & Signature Writing
-
 * **Status:** Completed
 * **Summary:** Deployed and configured Suricata to establish a baseline for normal network traffic. Drafted custom Intrusion Detection System (IDS) signatures to identify and flag anomalous behaviors—such as brute-force attempts and share enumeration—and classify their threat priorities.
 
 ### ✅ Day 10: The Attack Simulator — Offense-to-Detection Kill Chain
-
 * **Status:** Completed
 * **Summary:** Executed a full kill-chain against a sandboxed target (`<REDACTED_TARGET_IP>`), utilizing `nmap` for SMB reconnaissance, `hydra` for RDP brute-forcing, and `msfconsole` to weaponize the EternalBlue (MS17-010) vulnerability. Generated custom `reverse_tcp` meterpreter payloads using `msfvenom` to bypass inbound filtering.
 * **Blue Team Highlight:** Shifted to defensive analysis by correlating network actions with Suricata 6.0 alerts and Windows Event Logs (tracking Logon Failure ID `4625` to Logon Success ID `4624`), effectively reconstructing the attacker's timeline and triaging critical threats from early recon noise.
