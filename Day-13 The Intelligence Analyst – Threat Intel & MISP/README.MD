@@ -1,7 +1,7 @@
 # Day 13: The Intelligence Analyst – Threat Intel & MISP
 
 ## Overview
-This project simulates the workflow of a SOC Intelligence Analyst[cite: 2]. The primary focus is on gathering raw threat intelligence feeds, correlating them with internal logs to detect real attacks, writing actionable Threat Intelligence (TI) reports, and sharing findings via a Malware Information Sharing Platform (MISP). 
+This project simulates the workflow of a SOC Intelligence Analyst. The primary focus is on gathering raw threat intelligence feeds, correlating them with internal logs to detect real attacks, writing actionable Threat Intelligence (TI) reports, and sharing findings via a Malware Information Sharing Platform (MISP). 
 
 ## Key Concepts & Skills Demonstrated
 * **Threat Intelligence Feed Parsing:** Extracted and parsed Indicators of Compromise (IoCs), such as malicious IPs, domains, and hashes, from raw feeds like `ipsum.txt`.
