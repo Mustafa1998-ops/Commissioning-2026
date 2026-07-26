@@ -13,8 +13,9 @@ This repository serves as my active portfolio and evidence locker. It documents 
 ## 🛠️ Core Capabilities & Technology Stack
 *   **Environments:** Oracle VirtualBox, VMware, Kali Linux, Windows 11
 *   **Scripting & Automation:** Bash, PowerShell
-*   **Security Operations:** Log Analysis (SIEM fundamentals), File Integrity Monitoring (FIM), Access Control (IAM)
-*   **Endpoint Defense:** Process/Service investigation, Windows Event Viewer, `/var/log` interrogation
+*   **Security Operations:** Log Analysis, SIEM Fundamentals, Threat Intelligence (MISP), Incident Response Playbooks
+*   **Endpoint Defense:** Process/Service investigation, Windows Event Viewer, Sysmon, Linux `auditd`, File Integrity Monitoring (FIM)
+*   **Offensive Security Context:** Metasploit, Nmap, OpenVAS, Hydra, Hashcat, Privilege Escalation, Lateral Movement
 
 --- 
 
@@ -54,15 +55,64 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Status:** Completed
 *   **Summary:** Transitioned from offensive tool execution to defensive analysis by mapping attacker behavior to industry frameworks. Mapped Nmap active scanning techniques and the EternalBlue exploit to the MITRE ATT&CK framework and Lockheed Martin Cyber Kill Chain. Conducted a Detection Gap Analysis and generated a visual coverage heatmap to prioritize future SIEM rule development.
 
-*   ### ✅ Day 9: Defensive Operations & Signature Writing
-* **Status:** Completed
-* **Summary:** Deployed and configured Suricata to establish a baseline for normal network traffic. Drafted custom Intrusion Detection System (IDS) signatures to identify and flag anomalous behaviors—such as brute-force attempts and share enumeration—and classify their threat priorities.
+### ✅ Day 9: Defensive Operations & Signature Writing
+*   **Status:** Completed
+*   **Summary:** Deployed and configured Suricata to establish a baseline for normal network traffic. Drafted custom Intrusion Detection System (IDS) signatures to identify and flag anomalous behaviors—such as brute-force attempts and share enumeration—and classify their threat priorities.
 
 ### ✅ Day 10: The Attack Simulator — Offense-to-Detection Kill Chain
-* **Status:** Completed
-* **Summary:** Executed a full kill-chain against a sandboxed target (`<REDACTED_TARGET_IP>`), utilizing `nmap` for SMB reconnaissance, `hydra` for RDP brute-forcing, and `msfconsole` to weaponize the EternalBlue (MS17-010) vulnerability. Generated custom `reverse_tcp` meterpreter payloads using `msfvenom` to bypass inbound filtering.
-* **Blue Team Highlight:** Shifted to defensive analysis by correlating network actions with Suricata 6.0 alerts and Windows Event Logs (tracking Logon Failure ID `4625` to Logon Success ID `4624`), effectively reconstructing the attacker's timeline and triaging critical threats from early recon noise.
+*   **Status:** Completed
+*   **Summary:** Executed a full kill-chain against a sandboxed target (`[REDACTED_IP]`), utilizing `nmap` for SMB reconnaissance, `hydra` for RDP brute-forcing, and `msfconsole` to weaponize the EternalBlue (MS17-010) vulnerability. Generated custom `reverse_tcp` meterpreter payloads using `msfvenom` to bypass inbound filtering.
+*   **Blue Team Highlight:** Shifted to defensive analysis by correlating network actions with Suricata 6.0 alerts and Windows Event Logs (tracking Logon Failure ID `4625` to Logon Success ID `4624`), effectively reconstructing the attacker's timeline and triaging critical threats from early recon noise.
 
-### 🔄 Days 11 - 45: Active / In Progress
+### ✅ Day 11: The Forensic Investigator — Windows Event Logs & Sysmon
+*   **Status:** Completed
+*   **Summary:** Analyzed Windows endpoint telemetry to reconstruct an attacker's timeline and decode obfuscated payloads[cite: 9]. Queried the Windows Security Log using `Get-WinEvent` to identify a massive spike in Event ID 4625 (Logon Failure), indicating a brute-force attack[cite: 9]. Correlated the rapid failed logons with Event ID 4624 (Logon Success) and Event ID 4688 (Process Creation) to confirm the attacker gained access[cite: 9]. Analyzed Event ID 4104 (Script Block Logging) to capture and decode a Base64-encoded PowerShell payload[cite: 9]. Reviewed Sysmon high-resolution telemetry, mapping events to MITRE ATT&CK techniques[cite: 9].
 
-Further missions will be documented here as they are completed.
+### ✅ Day 12: The Linux Inspector — Log Analysis & auditd
+*   **Status:** Completed
+*   **Summary:** Parsed system, authentication, and web server logs to track malicious activity on Linux[cite: 10]. Analyzed `/var/log/auth.log` to trace a simulated SSH brute-force attack[cite: 10]. Configured `auditd` watch rules to monitor sensitive files for unauthorized modifications[cite: 10]. Filtered Apache access logs to identify SQL Injection attempts and 404 error patterns indicative of automated scanning[cite: 10]. Generated an interactive, graphical web log summary using `goaccess` to rapidly identify top attacker IPs[cite: 10].
+
+### ✅ Day 13: The Intelligence Analyst — Threat Intel & MISP
+*   **Status:** Completed
+*   **Summary:** Processed raw threat intelligence and correlated Indicators of Compromise (IoCs) with internal logs[cite: 11]. Ingested and parsed raw threat feeds to extract malicious IP addresses, domains, and hashes[cite: 11]. Cross-referenced parsed IoCs against internal SOC alerts[cite: 11]. Drafted a structured Threat Intelligence (TI) report detailing the threat actor's tactics mapped to the MITRE ATT&CK framework[cite: 11]. Created and published a structured threat event in the Malware Information Sharing Platform (MISP), tagging attributes with the correct Traffic Light Protocol (TLP:AMBER)[cite: 11].
+
+### ✅ Day 14: The SOC Commander — Building a SOC Playbook
+*   **Status:** Completed
+*   **Summary:** Established consistent, repeatable Incident Response (IR) procedures[cite: 12]. Authored comprehensive SOC playbooks for "RDP Brute Force" and "Malware Download" scenarios[cite: 12]. Detailed exact procedures for Detection, Triage, Analysis, Containment, Eradication, and Recovery[cite: 12]. Conducted a simulated peer review to identify operational gaps[cite: 12]. Mapped the finalized playbook steps to Security Orchestration, Automation, and Response (SOAR) workflows[cite: 12]. Earned the rank of CORPORAL[cite: 12].
+
+### ✅ Day 15: The Stealth Operator — Advanced Nmap & Evasion
+*   **Status:** Completed
+*   **Summary:** Mastered advanced scan evasion techniques designed to bypass legacy IDS/IPS systems. Executed Decoy scans, IP Fragmentation, and Idle/Zombie scans. Transitioned to defense by writing custom Suricata rules (`fragbits:M`) to successfully detect and drop evasive fragmented traffic.
+
+### ✅ Day 16: The Web Scout — Web Application Reconnaissance
+*   **Status:** Completed
+*   **Summary:** Deployed Damn Vulnerable Web App (DVWA) and conducted comprehensive web reconnaissance. Utilized `gobuster` for hidden directory brute-forcing, `WhatWeb` for tech stack fingerprinting, and `ffuf` for parameter fuzzing. Leveraged automated tools like Nikto and WPScan to identify misconfigurations and vulnerable plugins.
+
+### ✅ Day 17: The Vulnerability Assessor — OpenVAS / Nessus
+*   **Status:** Completed
+*   **Summary:** Deployed Greenbone Vulnerability Management (OpenVAS) to execute both unauthenticated and credentialed network vulnerability scans. Triaged findings based on CVSS scores, prioritizing Critical (9.0+) CVEs for immediate remediation, and authored custom NASL (Nessus Attack Scripting Language) detection scripts.
+
+### ✅ Day 18: The Exploiter — Metasploit & Manual Exploitation
+*   **Status:** Completed
+*   **Summary:** Executed full system compromise using the Metasploit Framework. Weaponized the MS17-010 exploit, established stealthy in-memory Meterpreter sessions, and migrated processes to evade detection. Extracted NTLM hashes, generated obfuscated payloads via MSFVenom, and executed manual web shell attacks.
+
+### ✅ Day 19: The Password Cracker — Hydra, John the Ripper, & Hashcat
+*   **Status:** Completed
+*   **Summary:** Explored the mechanics of credential compromise. Executed online brute-force attacks against RDP and SSH using `hydra`. Performed high-speed offline hash cracking against NTLM and shadow files using CPU-based `John the Ripper` and GPU-accelerated `Hashcat`. Dynamically generated targeted attack wordlists using `CeWL`.
+
+### ✅ Day 20: The Elevator — Privilege Escalation (Linux & Windows)
+*   **Status:** Completed
+*   **Summary:** Escalated privileges to `SYSTEM` and `root` across cross-platform environments. Exploited Windows unquoted service paths via `PowerUp.ps1` and abused COM objects using `JuicyPotato`. On Linux, abused SUID binaries, misconfigured sudo rights, and compiled raw kernel exploits (CVE-2021-3156) directly on the target machine.
+
+### ✅ Day 21: The Backdoor — Persistence Mechanisms
+*   **Status:** Completed
+*   **Summary:** Established covert, persistent access using Windows Registry Run keys, Scheduled Tasks, WMI Event Subscriptions, Linux Cron jobs, and systemd services. 
+*   **Blue Team Highlight:** Actively monitored the environment utilizing **Sysmon** and **auditd** telemetry to detect the injected persistence mechanisms in real-time, followed by a full remediation and eradication operation.
+
+### ✅ Day 22: The Infiltrator — Lateral Movement
+*   **Status:** Completed
+*   **Summary:** Navigated laterally across the environment using Pass-the-Hash (`impacket-psexec`), WMI remote execution, PSExec, and SSH hopping. Conducted credential spraying with `crackmapexec`. 
+*   **Blue Team Highlight:** Analyzed Windows Event Logs to actively hunt for lateral movement artifacts, specifically tracking Event IDs `4624` (Network Logon), `4688` (Process Creation), and `7045` (Service Creation).
+
+### 🔄 Days 23 - 45: Active / In Progress
+*Further missions will be documented here as they are completed.*
