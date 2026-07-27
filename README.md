@@ -114,5 +114,10 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Summary:** Navigated laterally across the environment using Pass-the-Hash (`impacket-psexec`), WMI remote execution, PSExec, and SSH hopping. Conducted credential spraying with `crackmapexec`. 
 *   **Blue Team Highlight:** Analyzed Windows Event Logs to actively hunt for lateral movement artifacts, specifically tracking Event IDs `4624` (Network Logon), `4688` (Process Creation), and `7045` (Service Creation).
 
-### 🔄 Days 23 - 45: Active / In Progress
+### ✅ Day 23: The Data Thief — Exfiltration Techniques
+*   **Status:** Completed
+*   **Summary:** Explored data exfiltration methodologies hiding in plain sight using standard network protocols. Weaponized HTTP POST requests, DNS queries (`dnscat2`), and ICMP pings (`xxd`, `ping`) to covertly transmit encoded data past standard outbound firewall restrictions.
+*   **Blue Team Highlight:** Engineered custom Suricata IDS signatures and utilized `tcpdump` to actively monitor and detect exfiltration anomalies. Successfully flagged suspicious traffic patterns, including massive HTTP POST bodies, abnormally long DNS queries (>200 characters), and unusually large ICMP payloads containing printable ASCII.
+
+### 🔄 Days 24 - 45: Active / In Progress
 *Further missions will be documented here as they are completed.*
