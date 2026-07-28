@@ -119,5 +119,10 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Summary:** Explored data exfiltration methodologies hiding in plain sight using standard network protocols. Weaponized HTTP POST requests, DNS queries (`dnscat2`), and ICMP pings (`xxd`, `ping`) to covertly transmit encoded data past standard outbound firewall restrictions.
 *   **Blue Team Highlight:** Engineered custom Suricata IDS signatures and utilized `tcpdump` to actively monitor and detect exfiltration anomalies. Successfully flagged suspicious traffic patterns, including massive HTTP POST bodies, abnormally long DNS queries (>200 characters), and unusually large ICMP payloads containing printable ASCII.
 
-### 🔄 Days 24 - 45: Active / In Progress
+### ✅ Day 24: The Rule Writer — Custom Suricata Rules
+*   **Status:** Completed
+*   **Summary:** Focused on Detection Engineering by writing, testing, and optimizing custom Suricata IDS rules. Engineered specific signatures to detect PowerShell encoded commands, DNS tunneling via unusually long queries (>200 characters), and Mimikatz credential dumping activity across the network.
+*   **Blue Team Highlight:** Validated custom rules against sample traffic and optimized rule thresholds (`threshold type limit, track by_src`) to reduce alert fatigue. Successfully updated the core Suricata ruleset (`suricata-update`) while preserving custom defensive signatures, earning the rank of SFC and completing Phase 3.
+
+### 🔄 Days 25 - 45: Active / In Progress
 *Further missions will be documented here as they are completed.*
