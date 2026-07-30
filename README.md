@@ -124,5 +124,15 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Summary:** Focused on Detection Engineering by writing, testing, and optimizing custom Suricata IDS rules. Engineered specific signatures to detect PowerShell encoded commands, DNS tunneling via unusually long queries (>200 characters), and Mimikatz credential dumping activity across the network.
 *   **Blue Team Highlight:** Validated custom rules against sample traffic and optimized rule thresholds (`threshold type limit, track by_src`) to reduce alert fatigue. Successfully updated the core Suricata ruleset (`suricata-update`) while preserving custom defensive signatures, earning the rank of SFC and completing Phase 3.
 
-### 🔄 Days 25 - 45: Active / In Progress
+### ✅ Day 25: The Log Master — PowerShell & Sysmon Logging
+*   **Status:** Completed
+*   **Summary:** Focused on establishing robust visibility to detect stealthy behaviors, obfuscated scripts, and advanced evasion techniques. Modified the Windows Registry to enable Script Block Logging and Transcription, and decoded Base64-encoded PowerShell commands (bypassing `-EncodedCommand` evasion).
+*   **Blue Team Highlight:** Built and deployed custom Sysmon XML configurations to filter default log noise and pinpoint highly specific `ProcessCreate` (`powershell.exe`) and `NetworkConnect` activity. Ran DeepBlueCLI against `security.evtx` logs and in real-time to instantly flag suspicious Event ID 4104s and known attack patterns, earning the rank of MSGT.
+
+### ✅ Day 26: The Linux Auditor — auditd · rsyslog · AIDE
+*   **Status:** Completed
+*   **Summary:** Established a comprehensive Linux auditing environment by configuring kernel-level monitoring, centralizing logs, and implementing cryptographic file integrity checks. Built custom `auditd` rules to monitor critical files (`/etc/passwd`, `/etc/shadow`) and track system calls (`execve`). Configured `rsyslog` to aggregate logs from multiple systems into a central server.
+*   **Blue Team Highlight:** Utilized `ausearch` to track specific modifications by the `root` and `student` users. Initialized the AIDE (Advanced Intrusion Detection Environment) FIM to detect simulated attacks, successfully flagging MD5 hash changes and unauthorized permission modifications on critical files. Leveraged `osquery` to hunt for system information using SQL syntax, earning the rank of CSM.
+
+### 🔄 Days 27 - 45: Active / In Progress
 *Further missions will be documented here as they are completed.*
