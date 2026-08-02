@@ -134,5 +134,35 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Summary:** Established a comprehensive Linux auditing environment by configuring kernel-level monitoring, centralizing logs, and implementing cryptographic file integrity checks. Built custom `auditd` rules to monitor critical files (`/etc/passwd`, `/etc/shadow`) and track system calls (`execve`). Configured `rsyslog` to aggregate logs from multiple systems into a central server.
 *   **Blue Team Highlight:** Utilized `ausearch` to track specific modifications by the `root` and `student` users. Initialized the AIDE (Advanced Intrusion Detection Environment) FIM to detect simulated attacks, successfully flagging MD5 hash changes and unauthorized permission modifications on critical files. Leveraged `osquery` to hunt for system information using SQL syntax, earning the rank of CSM.
 
-### 🔄 Days 27 - 45: Active / In Progress
+### ✅ Day 27: The Packet Analyst — Wireshark & TShark
+*   **Status:** Completed
+*   **Summary:** Captured and analyzed live network traffic using Wireshark and TShark. Filtered traffic using display filters, followed TCP streams to rebuild entire conversations, and extracted transferred files (e.g., `malware.exe`) directly from HTTP object data.
+*   **Blue Team Highlight:** Identified malicious Meterpreter reverse shell sessions by analyzing non-standard ports (4444) and evaluating JA3 fingerprints within TLS handshakes. Decrypted TLS traffic using session key logs to reveal hidden GET requests, and automated PCAP analysis via the TShark CLI.
+
+### ✅ Day 28: The EDR Operator — Endpoint Detection & Response
+*   **Status:** Completed
+*   **Summary:** Deployed the open-source Wazuh EDR Manager on a Kali Linux instance and configured Agents on Windows endpoints. Executed Mimikatz to verify the EDR detection pipeline, successfully tracing the alert from Sysmon event logs up to a Critical Alert on the Wazuh Dashboard.
+*   **Blue Team Highlight:** Researched and tested advanced EDR evasion tactics by utilizing SysWhispers3 to generate direct kernel system calls (`NtOpenProcess`), successfully bypassing user-mode API hooks. Simulated C2 traffic using the Sliver framework, officially earning the rank of MASTER SERGEANT.
+
+### ✅ Day 29: The Threat Hunter — Threat Hunting Fundamentals
+*   **Status:** Completed
+*   **Summary:** Explored proactive threat hunting fundamentals using the Hypothesis ➔ Collect ➔ Investigate ➔ Act methodology. Formulated hypotheses focused on WMI persistence and Living Off the Land techniques.
+*   **Blue Team Highlight:** Queried WMI namespaces to identify suspicious event filters and consumers using encoded PowerShell commands. Built generic Sigma rules for SIEM integration and executed automated hunt scripts across multiple endpoints to rapidly identify compromises.
+
+### ✅ Day 30: The Chain Hunter — Multi-Stage Execution
+*   **Status:** Completed
+*   **Summary:** Hunted multi-stage execution attack chains. Simulated an attack sequence from an initial download cradle (`cmd.exe` spawning `powershell.exe`) to payload staging, execution, and objective completion (Mimikatz credential dumping).
+*   **Blue Team Highlight:** Visualized process ancestry trees and correlated events chronologically through timeline analysis. Leveraged DeepBlueCLI to automate the detection of suspicious process chains in Windows event logs, and drafted KQL queries to hunt for these anomalies in SIEM environments.
+
+### ✅ Day 31: The Persistence Hunter — Persistence & Exfiltration
+*   **Status:** Completed
+*   **Summary:** Hunted for persistence mechanisms across scheduled tasks, Windows services, and Registry Run keys. Analyzed outbound network traffic and DNS queries to identify data exfiltration and tunneling.
+*   **Blue Team Highlight:** Uncovered a malicious scheduled task (`BackupTask`) executing encoded PowerShell and a rogue registry run key (`SystemCheck`). Detected an anomalous 245 MB outbound data transfer to an external IP (`[REDACTED_IP]`) and utilized RITA to flag network beacons and DNS tunneling (215-character queries). Generated custom YARA rules for malware detection, earning the rank of SFC.
+
+### ✅ Day 32: The Incident Responder — IR & Forensic Basics
+*   **Status:** Completed
+*   **Summary:** Executed live response procedures to capture volatile data including network connections, running processes, loaded services, and registry hives. Simulated physical memory dumps utilizing `Dumplt.exe` (Windows) and `LiME` (Linux) to capture RAM contents for forensic analysis.
+*   **Blue Team Highlight:** Leveraged the Volatility framework to analyze memory dumps, successfully identifying process injection within `powershell.exe` containing a 200KB Meterpreter payload. Uncovered a hidden process by comparing `pslist` with `psscan` and carved a deleted instance of `mimikatz.exe` directly from memory, earning the rank of MSGT.
+
+### 🔄 Days 33 - 45: Active / In Progress
 *Further missions will be documented here as they are completed.*
