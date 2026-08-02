@@ -24,13 +24,13 @@ During this hands-on lab, I reinforced several critical threat hunting concepts:
 
 ## 🛠️ Toolset & Command Reference
 
- Tool / Command  Purpose 
- :---  :--- 
- **`schtasks /query`**  Lists scheduled tasks configured on the Windows endpoint. 
- **`Get-Service`**  Lists all Windows services to hunt for rogue executions. 
- **`HKLM\Run`**  Core registry location checked for persistence keys. 
- **RITA**  Real Intelligence Threat Analytics tool used to find beacons and tunnels. 
- **YARA**  A pattern-matching tool utilized to write rules for malware detection. 
+| Tool / Command | Purpose |
+| :--- | :--- |
+| **`schtasks /query`** | Lists scheduled tasks configured on the Windows endpoint. |
+| **`Get-Service`** | Lists all Windows services to hunt for rogue executions. |
+| **`HKLM\Run`** | Core registry location checked for persistence keys. |
+| **RITA** | Real Intelligence Threat Analytics tool used to find beacons and tunnels. |
+| **YARA** | A pattern-matching tool utilized to write rules for malware detection. |
 
 ---
 
