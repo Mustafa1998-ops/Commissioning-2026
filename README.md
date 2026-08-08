@@ -175,5 +175,37 @@ Below is the chronological log of my operational tasks, scripts written, and env
 *   **Status:** Completed
 *   **Summary:** Bridged offensive and defensive operations by executing focused MITRE ATT&CK techniques using Atomic Red Team. Verified detection coverage within the SIEM, constructed visual coverage heatmaps to highlight security gaps, and documented actionable recommendations in post-exercise reports.
 
-### 🔄 Days 39 - 45: Active / In Progress
-*Further missions will be documented here as they are completed.*
+### ✅ Day 39: The Campaign Commander — Campaign Planning & ROE
+*   **Status:** Completed
+*   **Summary:** Transitioned to a command role to organize a full 7-day cybersecurity exercise. Defined Red, Blue, and Purple Team roles, established strict Rules of Engagement (ROE), and mapped out the operational timeline. 
+*   **Blue/Red Team Highlight:** Verified operational readiness by confirming Blue Team logging was active, configuring Red Team tools (Sliver, Metasploit), and setting up advanced evasion techniques like domain fronting and sleep/jitter.
+
+### ✅ Day 40: The Attack Execution — Red Team Day 1
+*   **Status:** Completed
+*   **Summary:** Initiated the attack campaign by launching a Gophish phishing simulation and exploiting an unrestricted file upload vulnerability in DVWA. Established a Sliver HTTPS Command and Control (C2) session and conducted host reconnaissance.
+*   **Red Team Highlight:** Maintained a strict operational command log of all executed actions (e.g., `whoami`, `netstat`) while successfully evading EDR detection using the pre-configured sleep/jitter and CDN domain fronting.
+
+### ✅ Day 41: The Detection — Blue Team Monitoring
+*   **Status:** Completed
+*   **Summary:** Triaged incoming SIEM alerts from Suricata, Sysmon, and Wazuh to identify critical threats, including an EternalBlue exploit attempt and Mimikatz execution. Drafted a formal Incident Assessment report.
+*   **Blue Team Highlight:** Mapped the attacker's execution flow through parent-child process tree analysis and successfully executed standard Incident Response containment and eradication procedures to isolate the compromised host.
+
+### ✅ Day 42: The Final Act — Persistence & Exfiltration
+*   **Status:** Completed
+*   **Summary:** Secured Red Team access by establishing persistence via a scheduled task (`SystemCheck`) and Registry Run keys. Discovered the target flag on the file system and prepared for stealthy extraction.
+*   **Red Team Highlight:** Successfully exfiltrated the captured data bypassing outbound firewall restrictions by establishing a DNS tunnel (`dnscat2`) and embedding the flag within an image file using steganography (`steghide`).
+
+### ✅ Day 43: The Investigation — Blue Team Containment
+*   **Status:** Completed
+*   **Summary:** Reconstructed a chronological timeline of the entire attack from initial SMB enumeration to DNS tunneling exfiltration. Conducted Root Cause Analysis (RCA) to identify the initial phishing entry vector and lack of MFA.
+*   **Blue Team Highlight:** Captured and analyzed an 8GB memory dump using the Volatility framework. Successfully detected process injection within `powershell.exe`, uncovered hidden processes, and extracted the injected Meterpreter payload directly from memory.
+
+### ✅ Day 44: The Report Writers — Red & Blue Team Reporting
+*   **Status:** Completed
+*   **Summary:** Authored comprehensive Red and Blue Team reports detailing attack chronologies, detection timelines, and incident response recommendations. 
+*   **Blue Team Highlight:** Executed a Gap Analysis to compare detections against actual attacks. Identified blind spots (e.g., missed Local Account Creation alerts) and engineered new Sigma rules targeting `EventID 4720` to close the coverage gaps for future engagements.
+
+### ✅ Day 45: The Commissioning — After-Action Review & Graduation
+*   **Status:** Completed
+*   **Summary:** Conducted the final After-Action Review (AAR) to evaluate campaign effectiveness. Updated existing Incident Response playbooks with lessons learned and authored a new playbook for DNS Tunneling Detection.
+*   **Highlight:** Executed lab cleanup procedures to restore all Virtual Machines to a clean baseline. Officially completed all 177 tasks of the 45-day GraySentinel Cybersecurity Training Program and commissioned as a CAPTAIN.
